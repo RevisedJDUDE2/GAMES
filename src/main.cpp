@@ -22,12 +22,15 @@ int WINAPI WinMain(HINSTANCE hThis, HINSTANCE hPrev, LPSTR Args, int Ncmd) {
   Renderer WindowRenderer;
 
   WindowRenderer.InitContext(handle);
+  WindowRenderer.InitShaders();
 
   if(handle == INVALID_HANDLE_VALUE)
     MessageBoxA(nullptr, "Window creation failed", "GAME", MB_OK);
 
   if(!gladLoadGL())
     MessageBoxA(nullptr, "glad error", "GLAD", MB_OK);
+
+  WindowRenderer.InitPipeLine();
 
   while(true) {
     if(PeekMessage(&msg, handle, 0, 0, PM_REMOVE) > 0) {
@@ -36,11 +39,18 @@ int WINAPI WinMain(HINSTANCE hThis, HINSTANCE hPrev, LPSTR Args, int Ncmd) {
       if(msg.message == WM_QUIT)
         break;
     } else {
+      glUseProgram(WindowRenderer.pShaderProgram);
+      glBindVertexArray(WindowRenderer.pVAO);
+      glDrawArrays(GL_TRIANGLES, 0, 3);
       glClear(GL_COLOR_BUFFER_BIT);
       glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
       SwapBuffers(WindowRenderer.GetGLDC());
     }
-  }
+  } 
+  glDeleteVertexArrays(1, &WindowRenderer.pVAO);
+  glDeleteBuffers(1, &WindowRenderer.pVBO);
+  glDeleteProgram(WindowRenderer.pShaderProgram);
+
   wglMakeCurrent(NULL, NULL);
   wglDeleteContext(WindowRenderer.GetGLRC());
   ReleaseDC(handle, WindowRenderer.GetGLDC());

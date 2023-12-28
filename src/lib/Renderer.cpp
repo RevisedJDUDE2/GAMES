@@ -26,3 +26,44 @@ HDC Renderer::GetGLDC(void) const {
 HGLRC Renderer::GetGLRC(void) const {
   return this->pOpenGLRC;
 };
+
+void Renderer::InitPipeLine(void) {
+  float vertices[] = {
+      -0.5f, -0.5f, 0.0f,
+      0.5f, -0.5f, 0.0f,
+      0.0f,  0.5f, 0.0f
+  };  
+  unsigned int VAO, VBO;
+  glGenVertexArrays(1, &VAO);
+  glGenBuffers(1, &VBO);
+
+  glBindVertexArray(VAO);
+
+  glBindBuffer(GL_ARRAY_BUFFER, VBO);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+
+  glBindBuffer(GL_ARRAY_BUFFER, 0);
+  glBindVertexArray(0);
+  this->pVAO = VAO;
+  this->pVBO = VBO;
+}
+
+void Renderer::InitShaders() {
+  unsigned int VertexShader = glCreateShader(GL_VERTEX_SHADER);
+  glShaderSource(VertexShader, 1, &this->vertexShaderSource, NULL);
+  glCompileShader(VertexShader);
+
+  unsigned int FragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+  glShaderSource(FragmentShader, 1, &this->fragmentShaderSource, NULL);
+  glCompileShader(FragmentShader);
+
+  unsigned int ShaderProgram = glCreateProgram();
+  glAttachShader(ShaderProgram, VertexShader);
+  glAttachShader(ShaderProgram, FragmentShader);
+  glLinkProgram(ShaderProgram);
+
+  glDeleteShader(VertexShader);
+  glDeleteShader(FragmentShader);
+  this->pShaderProgram = ShaderProgram;
+}

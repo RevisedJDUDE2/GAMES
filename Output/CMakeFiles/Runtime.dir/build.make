@@ -84,18 +84,35 @@ CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.s"
 	C:/msys64/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Emachines/Projects/GAMES/src/lib/Renderer.cpp -o CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.s
 
+CMakeFiles/Runtime.dir/src/glad.c.obj: CMakeFiles/Runtime.dir/flags.make
+CMakeFiles/Runtime.dir/src/glad.c.obj: CMakeFiles/Runtime.dir/includes_C.rsp
+CMakeFiles/Runtime.dir/src/glad.c.obj: C:/Users/Emachines/Projects/GAMES/src/glad.c
+CMakeFiles/Runtime.dir/src/glad.c.obj: CMakeFiles/Runtime.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Runtime.dir/src/glad.c.obj"
+	C:/msys64/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Runtime.dir/src/glad.c.obj -MF CMakeFiles/Runtime.dir/src/glad.c.obj.d -o CMakeFiles/Runtime.dir/src/glad.c.obj -c C:/Users/Emachines/Projects/GAMES/src/glad.c
+
+CMakeFiles/Runtime.dir/src/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Runtime.dir/src/glad.c.i"
+	C:/msys64/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:/Users/Emachines/Projects/GAMES/src/glad.c > CMakeFiles/Runtime.dir/src/glad.c.i
+
+CMakeFiles/Runtime.dir/src/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Runtime.dir/src/glad.c.s"
+	C:/msys64/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:/Users/Emachines/Projects/GAMES/src/glad.c -o CMakeFiles/Runtime.dir/src/glad.c.s
+
 # Object files for target Runtime
 Runtime_OBJECTS = \
-"CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.obj"
+"CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.obj" \
+"CMakeFiles/Runtime.dir/src/glad.c.obj"
 
 # External object files for target Runtime
 Runtime_EXTERNAL_OBJECTS =
 
 libRuntime.dll: CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.obj
+libRuntime.dll: CMakeFiles/Runtime.dir/src/glad.c.obj
 libRuntime.dll: CMakeFiles/Runtime.dir/build.make
 libRuntime.dll: CMakeFiles/Runtime.dir/linkLibs.rsp
 libRuntime.dll: CMakeFiles/Runtime.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libRuntime.dll"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libRuntime.dll"
 	"C:/Program Files/CMake/bin/cmake.exe" -E rm -f CMakeFiles/Runtime.dir/objects.a
 	C:/msys64/mingw64/bin/ar.exe qc CMakeFiles/Runtime.dir/objects.a @CMakeFiles/Runtime.dir/objects1.rsp
 	C:/msys64/mingw64/bin/c++.exe -shared -o libRuntime.dll -Wl,--out-implib,libRuntime.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles/Runtime.dir/objects.a -Wl,--no-whole-archive @CMakeFiles/Runtime.dir/linkLibs.rsp

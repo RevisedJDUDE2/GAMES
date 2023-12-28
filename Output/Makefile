@@ -147,6 +147,7 @@ src/glad.obj: src/glad.c.obj
 
 # target to build an object file
 src/glad.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Runtime.dir/build.make CMakeFiles/Runtime.dir/src/glad.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GlGame.dir/build.make CMakeFiles/GlGame.dir/src/glad.c.obj
 .PHONY : src/glad.c.obj
 
@@ -155,6 +156,7 @@ src/glad.i: src/glad.c.i
 
 # target to preprocess a source file
 src/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Runtime.dir/build.make CMakeFiles/Runtime.dir/src/glad.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GlGame.dir/build.make CMakeFiles/GlGame.dir/src/glad.c.i
 .PHONY : src/glad.c.i
 
@@ -163,6 +165,7 @@ src/glad.s: src/glad.c.s
 
 # target to generate assembly for a file
 src/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Runtime.dir/build.make CMakeFiles/Runtime.dir/src/glad.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GlGame.dir/build.make CMakeFiles/GlGame.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
