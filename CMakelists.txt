@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.10)
+
+project(GlGame)
+file(GLOB_RECURSE SRC_FILES src/*.cpp src/*.c)
+add_executable(GlGame ${SRC_FILES})
+target_include_directories(GlGame PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(GlGame PUBLIC opengl32)
+set_target_properties(GlGame PROPERTIES WIN32_EXECUTABLE TRUE)
