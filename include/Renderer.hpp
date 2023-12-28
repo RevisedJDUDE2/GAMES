@@ -9,4 +9,5 @@ class Renderer {
     void InitContext(HWND& Window);
     HGLRC GetGLRC(void) const;
     HDC GetGLDC(void) const;
+    void InitPipeLine();
 };

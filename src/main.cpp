@@ -33,6 +33,8 @@ int WINAPI WinMain(HINSTANCE hThis, HINSTANCE hPrev, LPSTR Args, int Ncmd) {
     if(PeekMessage(&msg, handle, 0, 0, PM_REMOVE) > 0) {
       TranslateMessage(&msg);
       DispatchMessage(&msg);
+      if(msg.message == WM_QUIT)
+        break;
     } else {
       glClear(GL_COLOR_BUFFER_BIT);
       glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
@@ -47,11 +49,11 @@ int WINAPI WinMain(HINSTANCE hThis, HINSTANCE hPrev, LPSTR Args, int Ncmd) {
 }
 
 LRESULT CALLBACK winprocedure(HWND handle, UINT reason, WPARAM wp, LPARAM lp) {
+  LRESULT Result = 0;
   switch(reason) {
-    case WM_DESTROY:
-      PostQuitMessage(0);
-      break;
     default:
-      return DefWindowProcA(handle, reason, wp, lp);
+      Result = DefWindowProcA(handle, reason, wp, lp);
+      break;
   }
+  return Result;
 }
