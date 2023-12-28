@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/GlGame.dir/src/glad.c.obj"
   "CMakeFiles/GlGame.dir/src/glad.c.obj.d"
+  "CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj"
+  "CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj.d"
   "CMakeFiles/GlGame.dir/src/main.cpp.obj"
   "CMakeFiles/GlGame.dir/src/main.cpp.obj.d"
   "GlGame.exe"

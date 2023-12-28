@@ -1,5 +1,6 @@
-CMakeFiles/GlGame.dir/src/main.cpp.obj: \
- C:/Users/Emachines/Projects/GAMES/src/main.cpp \
+CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.obj: \
+ C:/Users/Emachines/Projects/GAMES/src/lib/Renderer.cpp \
+ C:/Users/Emachines/Projects/GAMES/include/Renderer.hpp \
  C:/msys64/mingw64/include/windows.h C:/msys64/mingw64/include/_mingw.h \
  C:/msys64/mingw64/include/_mingw_mac.h \
  C:/msys64/mingw64/include/_mingw_secapi.h \
@@ -232,9 +233,7 @@ CMakeFiles/GlGame.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/sec_api/stralign_s.h \
  C:/msys64/mingw64/include/winsvc.h C:/msys64/mingw64/include/mcx.h \
  C:/msys64/mingw64/include/imm.h \
- C:/Users/Emachines/Projects/GAMES/include/glad/glad.h \
+ C:/Users/Emachines/Projects/GAMES/include/glad\glad.h \
  C:/Users/Emachines/Projects/GAMES/include/KHR/khrplatform.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint.h \
- C:/msys64/mingw64/include/stdint.h \
- C:/Users/Emachines/Projects/GAMES/include/Renderer.hpp \
- C:/Users/Emachines/Projects/GAMES/include/glad\glad.h
+ C:/msys64/mingw64/include/stdint.h

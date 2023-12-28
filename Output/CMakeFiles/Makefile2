@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = C:/Users/Emachines/Projects/GAMES/Output
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/Runtime.dir/all
 all: CMakeFiles/GlGame.dir/all
 .PHONY : all
 
@@ -71,22 +72,49 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/Runtime.dir/clean
 clean: CMakeFiles/GlGame.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Runtime.dir
+
+# All Build rule for target.
+CMakeFiles/Runtime.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Runtime.dir/build.make CMakeFiles/Runtime.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Runtime.dir/build.make CMakeFiles/Runtime.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=5,6 "Built target Runtime"
+.PHONY : CMakeFiles/Runtime.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Runtime.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Runtime.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles 0
+.PHONY : CMakeFiles/Runtime.dir/rule
+
+# Convenience name for target.
+Runtime: CMakeFiles/Runtime.dir/rule
+.PHONY : Runtime
+
+# clean rule for target.
+CMakeFiles/Runtime.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Runtime.dir/build.make CMakeFiles/Runtime.dir/clean
+.PHONY : CMakeFiles/Runtime.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/GlGame.dir
 
 # All Build rule for target.
-CMakeFiles/GlGame.dir/all:
+CMakeFiles/GlGame.dir/all: CMakeFiles/Runtime.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GlGame.dir/build.make CMakeFiles/GlGame.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GlGame.dir/build.make CMakeFiles/GlGame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=1,2,3 "Built target GlGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=1,2,3,4 "Built target GlGame"
 .PHONY : CMakeFiles/GlGame.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/GlGame.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/GlGame.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles 0
 .PHONY : CMakeFiles/GlGame.dir/rule

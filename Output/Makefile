@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Runtime
+
+# Build rule for target.
+Runtime: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Runtime
+.PHONY : Runtime
+
+# fast build rule for target.
+Runtime/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Runtime.dir/build.make CMakeFiles/Runtime.dir/build
+.PHONY : Runtime/fast
+
+#=============================================================================
 # Target rules for targets named GlGame
 
 # Build rule for target.
@@ -153,6 +166,33 @@ src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GlGame.dir/build.make CMakeFiles/GlGame.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
+src/lib/Renderer.obj: src/lib/Renderer.cpp.obj
+.PHONY : src/lib/Renderer.obj
+
+# target to build an object file
+src/lib/Renderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Runtime.dir/build.make CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GlGame.dir/build.make CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj
+.PHONY : src/lib/Renderer.cpp.obj
+
+src/lib/Renderer.i: src/lib/Renderer.cpp.i
+.PHONY : src/lib/Renderer.i
+
+# target to preprocess a source file
+src/lib/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Runtime.dir/build.make CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GlGame.dir/build.make CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.i
+.PHONY : src/lib/Renderer.cpp.i
+
+src/lib/Renderer.s: src/lib/Renderer.cpp.s
+.PHONY : src/lib/Renderer.s
+
+# target to generate assembly for a file
+src/lib/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Runtime.dir/build.make CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GlGame.dir/build.make CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.s
+.PHONY : src/lib/Renderer.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -186,9 +226,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... GlGame"
+	@echo "... Runtime"
 	@echo "... src/glad.obj"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
+	@echo "... src/lib/Renderer.obj"
+	@echo "... src/lib/Renderer.i"
+	@echo "... src/lib/Renderer.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

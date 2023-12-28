@@ -1,5 +1,6 @@
 #include <windows.h>
 #include "glad/glad.h"
+#include "Renderer.hpp"
 
 LRESULT CALLBACK winprocedure(HWND, UINT, WPARAM, LPARAM);
 
@@ -18,19 +19,9 @@ int WINAPI WinMain(HINSTANCE hThis, HINSTANCE hPrev, LPSTR Args, int Ncmd) {
   handle = CreateWindowExA(0, wndclassexa.lpszClassName, "Game", WS_OVERLAPPEDWINDOW | WS_VISIBLE, CW_USEDEFAULT, CW_USEDEFAULT, 800, 600,
                           nullptr, nullptr, wndclassexa.hInstance, nullptr);
 
-  HDC opengldc = GetDC(handle);
-  PIXELFORMATDESCRIPTOR pfd = {sizeof(PIXELFORMATDESCRIPTOR)};
+  Renderer WindowRenderer;
 
-  pfd.nVersion = 1;
-  pfd.dwFlags = PFD_SUPPORT_OPENGL | PFD_DRAW_TO_WINDOW | PFD_DOUBLEBUFFER;
-  pfd.iPixelType = PFD_TYPE_RGBA;
-  pfd.cColorBits = 16;
-
-  int format = ChoosePixelFormat(opengldc, &pfd);
-  SetPixelFormat(opengldc, format, &pfd);
-
-  HGLRC openglrc = wglCreateContext(opengldc);
-  wglMakeCurrent(opengldc, openglrc);
+  WindowRenderer.InitContext(handle);
 
   if(handle == INVALID_HANDLE_VALUE)
     MessageBoxA(nullptr, "Window creation failed", "GAME", MB_OK);
@@ -45,12 +36,12 @@ int WINAPI WinMain(HINSTANCE hThis, HINSTANCE hPrev, LPSTR Args, int Ncmd) {
     } else {
       glClear(GL_COLOR_BUFFER_BIT);
       glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
-      SwapBuffers(opengldc);
+      SwapBuffers(WindowRenderer.GetGLDC());
     }
   }
   wglMakeCurrent(NULL, NULL);
-  wglDeleteContext(openglrc);
-  ReleaseDC(handle, opengldc);
+  wglDeleteContext(WindowRenderer.GetGLRC());
+  ReleaseDC(handle, WindowRenderer.GetGLDC());
   DestroyWindow(handle);
   return 0;
 }

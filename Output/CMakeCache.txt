@@ -251,6 +251,9 @@ GlGame_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 GlGame_SOURCE_DIR:STATIC=C:/Users/Emachines/Projects/GAMES
 
+//Dependencies for the target
+Runtime_LIB_DEPENDS:STATIC=general;opengl32;
+
 
 ########################
 # INTERNAL cache entries

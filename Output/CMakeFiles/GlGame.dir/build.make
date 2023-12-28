@@ -84,11 +84,26 @@ CMakeFiles/GlGame.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GlGame.dir/src/glad.c.s"
 	C:/msys64/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:/Users/Emachines/Projects/GAMES/src/glad.c -o CMakeFiles/GlGame.dir/src/glad.c.s
 
+CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj: CMakeFiles/GlGame.dir/flags.make
+CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj: CMakeFiles/GlGame.dir/includes_CXX.rsp
+CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj: C:/Users/Emachines/Projects/GAMES/src/lib/Renderer.cpp
+CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj: CMakeFiles/GlGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj"
+	C:/msys64/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj -MF CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj.d -o CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj -c C:/Users/Emachines/Projects/GAMES/src/lib/Renderer.cpp
+
+CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.i"
+	C:/msys64/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Emachines/Projects/GAMES/src/lib/Renderer.cpp > CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.i
+
+CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.s"
+	C:/msys64/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Emachines/Projects/GAMES/src/lib/Renderer.cpp -o CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.s
+
 CMakeFiles/GlGame.dir/src/main.cpp.obj: CMakeFiles/GlGame.dir/flags.make
 CMakeFiles/GlGame.dir/src/main.cpp.obj: CMakeFiles/GlGame.dir/includes_CXX.rsp
 CMakeFiles/GlGame.dir/src/main.cpp.obj: C:/Users/Emachines/Projects/GAMES/src/main.cpp
 CMakeFiles/GlGame.dir/src/main.cpp.obj: CMakeFiles/GlGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GlGame.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GlGame.dir/src/main.cpp.obj"
 	C:/msys64/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GlGame.dir/src/main.cpp.obj -MF CMakeFiles/GlGame.dir/src/main.cpp.obj.d -o CMakeFiles/GlGame.dir/src/main.cpp.obj -c C:/Users/Emachines/Projects/GAMES/src/main.cpp
 
 CMakeFiles/GlGame.dir/src/main.cpp.i: cmake_force
@@ -102,17 +117,20 @@ CMakeFiles/GlGame.dir/src/main.cpp.s: cmake_force
 # Object files for target GlGame
 GlGame_OBJECTS = \
 "CMakeFiles/GlGame.dir/src/glad.c.obj" \
+"CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj" \
 "CMakeFiles/GlGame.dir/src/main.cpp.obj"
 
 # External object files for target GlGame
 GlGame_EXTERNAL_OBJECTS =
 
 GlGame.exe: CMakeFiles/GlGame.dir/src/glad.c.obj
+GlGame.exe: CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj
 GlGame.exe: CMakeFiles/GlGame.dir/src/main.cpp.obj
 GlGame.exe: CMakeFiles/GlGame.dir/build.make
+GlGame.exe: libRuntime.dll.a
 GlGame.exe: CMakeFiles/GlGame.dir/linkLibs.rsp
 GlGame.exe: CMakeFiles/GlGame.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable GlGame.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/Emachines/Projects/GAMES/Output/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable GlGame.exe"
 	"C:/Program Files/CMake/bin/cmake.exe" -E rm -f CMakeFiles/GlGame.dir/objects.a
 	C:/msys64/mingw64/bin/ar.exe qc CMakeFiles/GlGame.dir/objects.a @CMakeFiles/GlGame.dir/objects1.rsp
 	C:/msys64/mingw64/bin/c++.exe -mwindows -Wl,--whole-archive CMakeFiles/GlGame.dir/objects.a -Wl,--no-whole-archive -o GlGame.exe -Wl,--out-implib,libGlGame.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/GlGame.dir/linkLibs.rsp

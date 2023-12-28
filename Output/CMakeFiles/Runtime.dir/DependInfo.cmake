@@ -8,9 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Emachines/Projects/GAMES/src/glad.c" "CMakeFiles/GlGame.dir/src/glad.c.obj" "gcc" "CMakeFiles/GlGame.dir/src/glad.c.obj.d"
-  "C:/Users/Emachines/Projects/GAMES/src/lib/Renderer.cpp" "CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj" "gcc" "CMakeFiles/GlGame.dir/src/lib/Renderer.cpp.obj.d"
-  "C:/Users/Emachines/Projects/GAMES/src/main.cpp" "CMakeFiles/GlGame.dir/src/main.cpp.obj" "gcc" "CMakeFiles/GlGame.dir/src/main.cpp.obj.d"
+  "C:/Users/Emachines/Projects/GAMES/src/lib/Renderer.cpp" "CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.obj" "gcc" "CMakeFiles/Runtime.dir/src/lib/Renderer.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
